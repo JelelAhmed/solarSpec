@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "SolarSpec",
+    "slug": "solarspec",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#131313"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.solarspec.app",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "SolarSpec uses your photo library to upload your business logo for proposals."
+      }
+    },
+    "android": {
+      "package": "com.solarspec.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#131313"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "plugins": [
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
+          "iosAppId": "ca-app-pub-3940256099942544~1458002511"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "PLACEHOLDER_REPLACE_WITH_REAL_EAS_PROJECT_ID"
+      }
+    }
+  }
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SolarSpec - System Diagram</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-container": "#f5a623",
+                "outline": "#9f8e7a",
+                "on-tertiary": "#00344a",
+                "surface-variant": "#353534",
+                "secondary-fixed": "#86f8c9",
+                "primary-fixed-dim": "#ffb955",
+                "tertiary-container": "#3ac2ff",
+                "tertiary-fixed": "#c4e7ff",
+                "on-primary-fixed": "#291800",
+                "on-secondary-fixed": "#002115",
+                "on-tertiary-container": "#004d6a",
+                "on-tertiary-fixed-variant": "#004c69",
+                "on-tertiary-fixed": "#001e2c",
+                "secondary-container": "#26a37a",
+                "on-surface": "#e5e2e1",
+                "inverse-primary": "#835500",
+                "on-primary-fixed-variant": "#633f00",
+                "background": "#131313",
+                "surface-container-lowest": "#0e0e0e",
+                "primary": "#ffc880",
+                "error-container": "#93000a",
+                "surface-bright": "#3a3939",
+                "on-error": "#690005",
+                "surface": "#131313",
+                "on-secondary-container": "#003121",
+                "on-secondary-fixed-variant": "#00513a",
+                "surface-tint": "#ffb955",
+                "surface-container": "#201f1f",
+                "inverse-on-surface": "#313030",
+                "tertiary-fixed-dim": "#7cd0ff",
+                "on-primary-container": "#644000",
+                "inverse-surface": "#e5e2e1",
+                "surface-dim": "#131313",
+                "error": "#ffb4ab",
+                "surface-container-low": "#1c1b1b",
+                "on-error-container": "#ffdad6",
+                "secondary-fixed-dim": "#68dbae",
+                "on-background": "#e5e2e1",
+                "on-secondary": "#003827",
+                "secondary": "#68dbae",
+                "surface-container-highest": "#353534",
+                "outline-variant": "#524534",
+                "tertiary": "#9bd9ff",
+                "primary-fixed": "#ffddb4",
+                "on-primary": "#452b00",
+                "on-surface-variant": "#d7c3ae",
+                "surface-container-high": "#2a2a2a"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-amber { filter: drop-shadow(0 0 4px #f5a623); }
+        .glow-teal { filter: drop-shadow(0 0 4px #26a37a); }
+        .dashed-path { stroke-dasharray: 4 4; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container/30">
+<!-- Top Navigation Bar -->
+<header class="bg-[#131313] w-full sticky top-0 z-50 tonal-layering">
+<!-- Main Nav Row -->
+<div class="flex justify-between items-center px-6 py-3 h-14">
+<div class="flex items-center gap-4">
+<button class="text-[#f5a623] hover:bg-[#2A2A2A] transition-colors p-2 rounded-lg active:scale-95 duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="text-xl font-black text-[#f5a623] uppercase tracking-widest font-headline">SolarSpec</span>
+</div>
+<button class="text-[#f5a623] hover:bg-[#2A2A2A] transition-colors p-2 rounded-lg active:scale-95 duration-200">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<!-- Progress Row -->
+<div class="flex items-center justify-between px-6 pb-4 border-b border-outline-variant/10">
+<span class="text-[#E5E2E1]/60 font-label text-[10px] tracking-widest uppercase">Step 5 of 6</span>
+<div class="flex gap-1">
+<div class="h-1 w-6 bg-primary-container rounded-full"></div>
+<div class="h-1 w-6 bg-primary-container rounded-full"></div>
+<div class="h-1 w-6 bg-primary-container rounded-full"></div>
+<div class="h-1 w-6 bg-primary-container rounded-full"></div>
+<div class="h-1 w-6 bg-primary-container rounded-full"></div>
+<div class="h-1 w-6 bg-surface-container-highest rounded-full"></div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-6 py-8 md:py-12">
+<!-- Header Section -->
+<section class="mb-12">
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold tracking-tight text-on-surface mb-2">System Diagram</h1>
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-[0.1em]">Tap any component to view details</p>
+</section>
+<!-- Schematic Canvas -->
+<div class="relative w-full aspect-[4/3] bg-surface-container-lowest rounded-xl overflow-hidden shadow-2xl p-4 md:p-8 flex flex-col items-center justify-center border border-outline-variant/10">
+<!-- SVG Schematic Container -->
+<svg class="w-full h-full" fill="none" viewbox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<!-- DC Connections (Amber) -->
+<path class="glow-amber" d="M400 120 V 300" stroke="#f5a623" stroke-width="3"></path>
+<path class="glow-amber" d="M180 300 H 400" stroke="#f5a623" stroke-width="3"></path>
+<!-- AC Connections (Teal) -->
+<path class="glow-teal" d="M400 300 H 620" stroke="#26a37a" stroke-width="3"></path>
+<path class="glow-teal" d="M400 300 V 480" stroke="#26a37a" stroke-width="3"></path>
+<path class="glow-teal" d="M180 120 V 480 H 400" stroke="#26a37a" stroke-width="3"></path>
+<!-- Grid Bypass (Dashed Grey) -->
+<path class="dashed-path opacity-40" d="M180 120 H 400" stroke="#9f8e7a" stroke-width="2"></path>
+<!-- Connection Labels -->
+<g class="font-label text-[10px] font-semibold fill-primary-container">
+<rect fill="#0e0e0e" height="20" rx="4" width="80" x="360" y="200"></rect>
+<text class="glow-amber" text-anchor="middle" x="400" y="214">48V, 20A DC</text>
+</g>
+<g class="font-label text-[10px] font-semibold fill-secondary">
+<rect fill="#0e0e0e" height="20" rx="4" width="80" x="500" y="290"></rect>
+<text class="glow-teal" text-anchor="middle" x="540" y="304">230V, 15A AC</text>
+</g>
+</svg>
+<!-- Interactive Components (Positioned with Absolute Grid) -->
+<div class="absolute inset-0 p-8 grid grid-cols-3 grid-rows-3 gap-4 pointer-events-none">
+<!-- Grid Pylon (Top Left) -->
+<button class="pointer-events-auto group flex flex-col items-center justify-center gap-2 p-4 bg-surface-container-high/40 hover:bg-surface-container-high/80 rounded-lg transition-all border border-outline-variant/5">
+<span class="material-symbols-outlined text-tertiary text-3xl">cell_tower</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">Grid Pylon</span>
+</button>
+<!-- Solar Panels (Top Center) -->
+<button class="pointer-events-auto group flex flex-col items-center justify-center gap-2 p-4 bg-surface-container-high/40 hover:bg-surface-container-high/80 rounded-lg transition-all border border-outline-variant/5 scale-110">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">solar_power</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">Solar Array</span>
+</button>
+<div></div> <!-- Spacer -->
+<!-- Battery Bank (Left Center) -->
+<button class="pointer-events-auto group flex flex-col items-center justify-center gap-2 p-4 bg-surface-container-high/40 hover:bg-surface-container-high/80 rounded-lg transition-all border border-outline-variant/5">
+<span class="material-symbols-outlined text-secondary text-3xl">battery_charging_full</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">Battery Storage</span>
+</button>
+<!-- Inverter (Center) -->
+<button class="pointer-events-auto group flex flex-col items-center justify-center gap-2 p-6 bg-surface-container-high border-2 border-primary-container/20 hover:border-primary-container rounded-xl transition-all shadow-lg shadow-black/50">
+<span class="material-symbols-outlined text-primary-container text-5xl">memory</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-primary-container">Hybrid Inverter</span>
+</button>
+<!-- Protection Box (Right Center) -->
+<button class="pointer-events-auto group flex flex-col items-center justify-center gap-2 p-4 bg-surface-container-high/40 hover:bg-surface-container-high/80 rounded-lg transition-all border border-outline-variant/5">
+<span class="material-symbols-outlined text-error text-3xl">shield</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">Safety Hub</span>
+</button>
+<div></div> <!-- Spacer -->
+<!-- House Load (Bottom Center) -->
+<button class="pointer-events-auto group flex flex-col items-center justify-center gap-2 p-4 bg-surface-container-high/40 hover:bg-surface-container-high/80 rounded-lg transition-all border border-outline-variant/5">
+<span class="material-symbols-outlined text-tertiary text-3xl">home</span>
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">Main Residence</span>
+</button>
+<div></div> <!-- Spacer -->
+</div>
+<!-- Detail Highlight Overlay (Visual Guide) -->
+<div class="absolute bottom-4 right-4 bg-surface-container-lowest/80 backdrop-blur-md px-3 py-2 rounded-lg border border-outline-variant/20 flex items-center gap-3">
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-primary-container shadow-[0_0_4px_#f5a623]"></div>
+<span class="text-[9px] font-label uppercase tracking-widest text-on-surface/60">DC Current</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_4px_#26a37a]"></div>
+<span class="text-[9px] font-label uppercase tracking-widest text-on-surface/60">AC Current</span>
+</div>
+</div>
+</div>
+<!-- Technical Metadata Bento -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-surface-container-high p-5 rounded-xl flex flex-col gap-1 border-b border-outline-variant/20">
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant">System Topology</span>
+<span class="text-xl font-headline font-bold text-on-surface">Hybrid String</span>
+</div>
+<div class="bg-surface-container-high p-5 rounded-xl flex flex-col gap-1 border-b border-outline-variant/20">
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant">Phase Configuration</span>
+<span class="text-xl font-headline font-bold text-on-surface">Single Phase</span>
+</div>
+<div class="bg-surface-container-high p-5 rounded-xl flex flex-col gap-1 border-b border-outline-variant/20">
+<span class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant">Storage Capacity</span>
+<span class="text-xl font-headline font-bold text-secondary">15.4 kWh</span>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="mt-12 flex flex-col gap-4">
+<button class="w-full h-14 bg-gradient-to-b from-[#ffc880] to-[#f5a623] text-on-primary font-headline font-extrabold uppercase tracking-widest rounded-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all shadow-xl shadow-primary/10">
+                Next Step
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Bottom Sheet Simulation (Preview State) -->
+<div class="fixed inset-x-0 bottom-0 z-50 transform translate-y-full md:translate-y-0 md:relative md:mt-12 md:px-6 hidden">
+<div class="bg-surface-bright rounded-t-3xl md:rounded-xl p-8 border-t border-outline-variant/20 shadow-2xl max-w-4xl mx-auto">
+<div class="w-12 h-1.5 bg-outline-variant/30 rounded-full mx-auto mb-6 md:hidden"></div>
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+<div>
+<h3 class="text-2xl font-headline font-extrabold text-on-surface">Hybrid Inverter Detail</h3>
+<p class="text-on-surface-variant font-label text-xs uppercase tracking-widest">Model: SS-INV-5000-HB</p>
+</div>
+<button class="bg-primary-container/10 text-primary-container px-4 py-2 rounded-lg font-label font-bold text-xs uppercase tracking-widest">Update Specs</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div>
+<p class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant mb-1">Max Input</p>
+<p class="text-lg font-headline font-bold text-on-surface">6500W</p>
+</div>
+<div>
+<p class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant mb-1">Efficiency</p>
+<p class="text-lg font-headline font-bold text-secondary">97.6%</p>
+</div>
+<div>
+<p class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant mb-1">MPPT Range</p>
+<p class="text-lg font-headline font-bold text-on-surface">120-550V</p>
+</div>
+<div>
+<p class="text-[10px] font-label font-bold uppercase tracking-widest text-on-surface-variant mb-1">IP Rating</p>
+<p class="text-lg font-headline font-bold text-on-surface">IP65</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Decorative Texture -->
+<div class="fixed top-0 right-0 w-[500px] h-[500px] bg-primary-container/5 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
+<div class="fixed bottom-0 left-0 w-[400px] h-[400px] bg-secondary-container/5 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
+</body></html>
