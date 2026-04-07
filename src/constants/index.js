@@ -252,3 +252,5 @@ export const MIN_EFFICIENCY = 0.50;
 
 /** Maximum allowable efficiency value (fraction) for any efficiency input */
 export const MAX_EFFICIENCY = 0.99;
+
+

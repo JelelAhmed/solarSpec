@@ -501,4 +501,23 @@ export function runFullSizingCalculation(inputs) {
     backupHours,
     dailyYieldKwh,
   };
+
 }
+
+// ─── PROPOSAL REFERENCE ───────────────────────────────────────────────────────
+
+/**
+ * Generates a unique proposal reference string using the current year and a
+ * sequential counter based on the total number of stored proposals.
+ *
+ * Format: SS-YYYY-NNN  (e.g. "SS-2024-007")
+ *
+ * @param {number} [existingCount=0] - Number of proposals already stored
+ * @returns {string} Formatted proposal reference
+ */
+export function generateProposalReference(existingCount = 0) {
+  const year = new Date().getFullYear();
+  const seq = String(existingCount + 1).padStart(3, '0');
+  return `${PROPOSAL_REF_PREFIX}-${year}-${seq}`;
+}
+
