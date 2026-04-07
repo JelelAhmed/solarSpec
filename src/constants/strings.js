@@ -167,6 +167,7 @@ export const SYSTEM_DIAGRAM = {
   screenTitle: 'System Diagram',
   subtitle: 'TAP ANY COMPONENT TO VIEW DETAILS',
   stepLabel: 'STEP 5 OF 6',
+  stepRight: 'SYSTEM DIAGRAM',
 
   dcLegend: 'DC CURRENT',
   acLegend: 'AC CURRENT',
@@ -176,7 +177,19 @@ export const SYSTEM_DIAGRAM = {
   phaseValue: 'Single Phase',
   storageLabel: 'STORAGE CAPACITY',
 
-  nextBtn: 'NEXT STEP →',
+  // Component detail panel strings
+  solarDetailTitle: 'Solar Array',
+  batteryDetailTitle: 'Battery Storage',
+  inverterDetailTitle: 'Inverter',
+  hybridDetailTitle: 'Hybrid Inverter',
+  protectDetailTitle: 'Safety Hub',
+  houseDetailTitle: 'Main Residence',
+  gridDetailTitle: 'Grid Pylon',
+  chargeDetailTitle: 'Charge Controller',
+  updateSpecsBtn: 'UPDATE SPECS',
+  tapHint: 'Tap a component in the diagram to view details.',
+
+  nextBtn: 'NEXT STEP',
 };
 
 // ─── COMPONENT LIST (Step 6) ─────────────────────────────────────────────────
@@ -273,8 +286,9 @@ export const ERRORS = {
   loadFailed: 'Failed to load saved proposals.',
 };
 
-// ─── ADGMOB LABELS ───────────────────────────────────────────────────────────
+// ─── ADMOB LABELS ─────────────────────────────────────────────────────────────
 
 export const ADS = {
   bannerLabel: 'ADMOB BANNER (320×50)',
 };
+
